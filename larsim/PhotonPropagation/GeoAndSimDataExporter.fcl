@@ -26,6 +26,7 @@ physics:
         data:
         {
             module_type: "GeoAndSimDataExporter"
+            max_edeps_per_event: -1 // Use <= 0 to store all energy deposits
         }
     }
 
