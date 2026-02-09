@@ -165,6 +165,17 @@ cet_build_plugin(OpticalPropagation art::EDProducer
     CLHEP::Random
 )
 
+cet_build_plugin(GeoAndSimDataExporter art::EDAnalyzer
+    LIBRARIES PRIVATE
+    art::Framework_Principal
+    art_root_io::TFileService_service
+    larcore::ServiceUtil
+    larcorealg::Geometry
+    lardataobj::Simulation
+    larsim::IonizationScintillation
+    ROOT::Tree
+)
+
 add_executable(test_fast_acos test_fast_acos.cc)
 target_link_libraries(test_fast_acos PRIVATE larsim::PhotonPropagation)
 
